@@ -53,9 +53,9 @@ In this project it's required to take a newly developed Full-Stack application b
 
 By Taking a developed full stack application and deploying it to a cloud service provider so that it is available to customers. This application contains the main components of a 3-tier full stack application (UI, API, and Database).
 
-[AWS Infrastructure Description](./documentation/Infrastructure%20description.md)
+[AWS Infrastructure Description](./documentation/Infrastructure_description.md)
 
-![ARC](./documentation/Architecture-diagram.PNG)
+![ARC](./documentation/Architecture-diagram.PNg)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
