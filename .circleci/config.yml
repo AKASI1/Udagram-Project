@@ -31,9 +31,7 @@ jobs:
     steps:
       - node/install:
           node-version: "16.14.2"
-      - eb/deploy:
-          context: aws-creds
-          environment-name: udagram-api-dev
+      - eb/setup
       - aws-cli/setup
       - checkout
       - run:
