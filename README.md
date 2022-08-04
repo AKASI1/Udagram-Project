@@ -1,72 +1,99 @@
 # Hosting a Full-Stack Application
 
-### **You can use you own project completed in previous courses or use the provided Udagram app for completing this final project.**
+<!-- GETTING STARTED -->
 
----
+## Getting Started
 
-In this project you will learn how to take a newly developed Full-Stack application built for a retailer and deploy it to a cloud service provider so that it is available to customers. You will use the aws console to start and configure the services the application needs such as a database to store product information and a web server allowing the site to be discovered by potential customers. You will modify your package.json scripts and replace hard coded secrets with environment variables in your code.
+This project require some prequesites and dependenscies to be installed, you can find the instructions below
 
-After the initial setup, you will learn to interact with the services you started on aws and will deploy manually the application a first time to it. As you get more familiar with the services and interact with them through a CLI, you will gradually understand all the moving parts.
-
-You will then register for a free account on CircleCi and connect your Github account to it. Based on the manual steps used to deploy the app, you will write a config.yml file that will make the process reproducible in CircleCi. You will set up the process to be executed automatically based when code is pushed on the main Github branch.
-
-The project will also include writing documentation and runbooks covering the operations of the deployment process. Those runbooks will serve as a way to communicate with future developers and anybody involved in diagnosing outages of the Full-Stack application.
-
-# Udagram
-
-This application is provided to you as an alternative starter project if you do not wish to host your own code done in the previous courses of this nanodegree. The udagram application is a fairly simple application that includes all the major components of a Full-Stack web application.
-
-
-
-### Dependencies
-
-```
-- Node v14.15.1 (LTS) or more recent. While older versions can work it is advisable to keep node to latest LTS version
-
-- npm 6.14.8 (LTS) or more recent, Yarn can work but was not tested for this project
-
-- AWS CLI v2, v1 can work but was not tested for this project
-
-- A RDS database running Postgres.
-
-- A S3 bucket for hosting uploaded pictures.
-
-```
+> To get a local copy, follow these simple steps :
 
 ### Installation
 
-Provision the necessary AWS services needed for running the application:
+#### installing Locally
 
-1. In AWS, provision a publicly available RDS database running Postgres. <Place holder for link to classroom article>
-1. In AWS, provision a s3 bucket for hosting the uploaded files. <Place holder for tlink to classroom article>
-1. Export the ENV variables needed or use a package like [dotnev](https://www.npmjs.com/package/dotenv)/.
-1. From the root of the repo, navigate udagram-api folder `cd starter/udagram-api` to install the node_modules `npm install`. After installation is done start the api in dev mode with `npm run dev`.
-1. Without closing the terminal in step 1, navigate to the udagram-frontend `cd starter/udagram-frontend` to intall the node_modules `npm install`. After installation is done start the api in dev mode with `npm run start`.
+1. Clone the repo
+   ```sh
+   git clone https://github.com/abdrahmansoltan/Hosting-a-Full-Stack-Application.git
+   ```
+2. go to project folder
 
-## Testing
+   ```sh
+   cd Hosting-a-Full-Stack-Application
+   ```
 
-This project contains two different test suite: unit tests and End-To-End tests(e2e). Follow these steps to run the tests.
+3. install dependenscies
 
-1. `cd starter/udagram-frontend`
-1. `npm run test`
-1. `npm run e2e`
+   ```bash
+   npm run frontend:install
+   npm run backend:install
+   ```
 
-There are no Unit test on the back-end
+4. create databases
 
-### Unit Tests:
+   - connect to the default postgres database as the server's root user
 
-Unit tests are using the Jasmine Framework.
+     ```bash
+     psql -U postgres
+     ```
 
-### End to End Tests:
+   - In psql run the following to create a user
 
-The e2e tests are using Protractor and Jasmine.
+     ```bash
+     CREATE USER project_user WITH PASSWORD 'password123';
+     ```
 
-## Built With
+   - In psql run the following to create the dev database
 
-- [Angular](https://angular.io/) - Single Page Application Framework
-- [Node](https://nodejs.org) - Javascript Runtime
-- [Express](https://expressjs.com/) - Javascript API Framework
+     ```bash
+     CREATE DATABASE udagram;
+     ```
 
-## License
+   - Connect to the databases and grant all privileges
 
-[License](LICENSE.txt)
+     ```bash
+     \c udagram;
+     GRANT ALL PRIVILEGES ON DATABASE udagram TO project_user;
+     ```
+
+5. Enviromental Variables Set up
+
+   - Here are the environmental variables that needs to be set in a .env file. This is the default setting that I used for development, but you can change it to what works for you.
+
+   ```
+   POSTGRES_USERNAME=
+   POSTGRES_PASSWORD=
+   POSTGRES_HOST=localhost
+   POSTGRES_DB=template1
+   AWS_BUCKET=arn:aws:s3:::kasi-udagram-frontend
+   AWS_REGION=us-east-1
+   AWS_PROFILE=default
+   JWT_SECRET=mysecretstring
+   URL=http://localhost:8100
+   PORT=8080
+   ```
+
+6. Run development server
+
+   ```sh
+   cd udagram-api npm run dev
+   ```
+
+- or: Run frontend server
+
+  ```bash
+  cd udagram-frontend npm start
+  ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+---
+
+### Ports & EndPoints
+
+#### Ports
+
+- Server runs on port `8080`
+- Database on port `5432`
+
+---
