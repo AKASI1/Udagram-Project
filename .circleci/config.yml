@@ -43,7 +43,7 @@ jobs:
           name: Deplot api
           command: npm run api:deploy
 workflows:
-  Build/Deploy:
+  Build_Deploy:
     jobs:
       - build
       - deploy
