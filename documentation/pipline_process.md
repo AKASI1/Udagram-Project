@@ -7,8 +7,8 @@ CircleCI automatically runs the build and then deploy processes whenever the dev
 
 ### Environment Variables
 
-![env](../screenshots/ci-var.PNG)
+![env](../screenshots/ci-var.png)
 
 ### build in CircleCi
 
-![circleci](../screenshots/ci-run.PNG)
+![circleci](../screenshots/ci-run.png)

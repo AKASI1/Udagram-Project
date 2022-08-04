@@ -1,6 +1,6 @@
 ## Architecture Diagram
 
-![ARC](./Architecture-diagram.PNG)
+![ARC](./Architecture-diagram.png)
 
 ---
 
@@ -10,7 +10,7 @@ AWS RDS PostgreSQL Database info Sequelize:
 
 - postgres://postgres:akasiakasi7yz@[project-3.czybmthoclva.us-east-1.rds.amazonaws.com](project-3.czybmthoclva.us-east-1.rds.amazonaws.com):5432/postgres
 
-  ![rds](../screenshots/rds.PNG)
+  ![rds](../screenshots/rds.png)
 
 ---
 
@@ -18,7 +18,7 @@ AWS RDS PostgreSQL Database info Sequelize:
 
 EB URL: [http://udagram-api-dev.eba-afire2qu.us-east-1.elasticbeanstalk.com](http://Udagramfullstack-env.eba-aa8qagsp.us-east-1.elasticbeanstalk.com)
 
-![eb](../screenshots/eb.PNG)
+![eb](../screenshots/eb.png)
 
 ---
 
@@ -26,4 +26,4 @@ EB URL: [http://udagram-api-dev.eba-afire2qu.us-east-1.elasticbeanstalk.com](htt
 
 S3 Bucket URL: [http://kasi-project-3.s3-website-us-east-1.amazonaws.com/](http://kasi-project-3.s3-website-us-east-1.amazonaws.com/)
 
-![s3](../screenshots/s3.PNG)
+![s3](../screenshots/s3.png)

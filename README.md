@@ -55,9 +55,7 @@ By Taking a developed full stack application and deploying it to a cloud service
 
 [AWS Infrastructure Description](./documentation/Infrastructure_description.md)
 
-![ARC](./documentation/Architecture-diagram.PNg)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+![ARC](./documentation/Architecture-diagram.png)
 
 <!-- GETTING STARTED -->
 
